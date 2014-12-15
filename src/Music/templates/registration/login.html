@@ -13,13 +13,14 @@
     <h1 align="center">MUSICWEB</h1>
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <form method='post' action='/login_user/' class="form">
+        <form method='post' action='.' class="form">
           {% csrf_token %}
           {% bootstrap_form form %}
+          {% bootstrap_form_errors form %}
           {% buttons %}
-              <button type="button" class="btn btn-primary">
+              <a href="{% url 'core:sign_up' %}" class="btn btn-primary">
                   {% bootstrap_icon "star" %} Registrarse
-              </button>
+              </a>
               <button type="submit" class="btn btn-primary">
                   {% bootstrap_icon "star" %} Ingresar
               </button>

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response, HttpResponse
 from django.template import RequestContext
@@ -17,6 +18,12 @@ def show_bands(request):
 
 @login_required
 def add_artist(request):
+    """
+    Vemos que en el caso de que el método sea POST y el formulario
+    no sea válido le devolvemos al usuario el mismo formulario y
+    así de esta manera con bootstrap podemos marcarle al usuario
+    cuales fueron sus errrores.
+    """
     if request.method == "GET":
         form = ArtistForm()
         context = {'artist_form': form}

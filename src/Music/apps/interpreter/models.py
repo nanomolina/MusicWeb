@@ -6,6 +6,11 @@ from apps.interpreter.constants import INSTRUMENTS
 
 
 class Band(models.Model):
+    """
+    Esta es la tabla referida a nuestra banda donde guardaremos
+    la historia de tal, cuando se formó, si está activa hoy en día
+    y su nombre.
+    """
     name = models.CharField(max_length=60)
     origin = models.ForeignKey(Citie, null=True, blank=True)
     active = models.BooleanField(default=True)
@@ -16,6 +21,11 @@ class Band(models.Model):
 
 
 class Artist(models.Model):
+    """
+    Esta clase está referica a un miembro de alguna banda. Con
+    un nombre artistico, fecha y lugar de nacimiento, el instrumento
+    en que se destaca y una breve descripción de tal.
+    """
     artistic_name = models.CharField(max_length=50)
     birthday = models.DateField(null=True, blank=True)
     place_of_birth = models.ForeignKey(Citie, null=True, blank=True)
@@ -28,14 +38,3 @@ class Artist(models.Model):
 
     def __unicode__(self):
         return "%s" % (self.artistic_name,)
-
-
-
-
-#class ActivityPeriod(models.Model):
-#    begin = models.DateField(null=True, blank=True)
-#    end = models.DateField(null=True, blank=True)
-#    band = models.ForeignKey(Band, related_name='activity_period')
-#
-#    def __unicode__(self):
-#        return "%s / %s" % (self.begin, self.end)
