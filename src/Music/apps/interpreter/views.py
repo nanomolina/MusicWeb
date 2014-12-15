@@ -11,9 +11,7 @@ def show_bands(request):
     bands = Band.objects.all().order_by('name')
     context = {'bands': bands}
     return render_to_response('interpreter/bands.html',
-                              RequestContext(request,
-                                            context)
-                             )
+                              RequestContext(request, context))
 
 
 @login_required
@@ -28,9 +26,7 @@ def add_artist(request):
         form = ArtistForm()
         context = {'artist_form': form}
         return render_to_response('interpreter/artist_form.html',
-                                  RequestContext(request,
-                                                 context)
-                                 )
+                                  RequestContext(request, context))
     elif request.method == "POST":
         print request.POST
         form = ArtistForm(request.POST)
@@ -39,8 +35,7 @@ def add_artist(request):
             return redirect('core:home')
         return render_to_response(
             'interpreter/artist_form.html',
-            RequestContext(request, {'artist_form': form})
-        )
+            RequestContext(request, {'artist_form': form}))
 
 
 @login_required
@@ -49,9 +44,7 @@ def add_band(request):
         form = BandForm()
         context = {'band_form': form}
         return render_to_response('interpreter/band_form.html',
-                                  RequestContext(request,
-                                                 context)
-                                 )
+                                  RequestContext(request, context))
     elif request.method == "POST":
         print request.POST
         form = BandForm(request.POST)

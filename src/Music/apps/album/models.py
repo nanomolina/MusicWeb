@@ -1,9 +1,13 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from apps.interpreter.models import Band, Artist
 from apps.album.constants import GENRES
 
 
 class Album(models.Model):
+    """El requerimiento pillow que instalamos al principio
+    fue para que django maneje las imágenes pero todavia
+    no pude hacer que desde un formulario se guarden"""
     title = models.CharField(max_length=60)
     number = models.PositiveIntegerField(max_length=2)
     band = models.ForeignKey(Band, related_name='albums')

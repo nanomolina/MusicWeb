@@ -32,7 +32,8 @@ class Artist(models.Model):
     instrument = models.IntegerField(choices=INSTRUMENTS)
     description = models.TextField(null=True, blank=True)
     band = models.ManyToManyField(Band, related_name='members',
-                                     null=True, blank=True)
+                                  null=True, blank=True)
+
     def age(self):
         return datetime.now().date() - self.birthday
 
