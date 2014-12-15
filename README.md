@@ -1,7 +1,7 @@
 MusicWeb
 ========
 
-Este proyecto almacena toda la información referida a bandas locales con el con el fin de promover sus canciones e historias, compartir su música sin fines de lucro.
+Este proyecto almacena toda la información referida a bandas locales con el con el fin de promover sus canciones e historias, compartir su música y más, sin fines de lucro.
 
 Requerimientos
 --------------
