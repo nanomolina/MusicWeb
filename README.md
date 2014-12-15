@@ -21,7 +21,9 @@ Necesitaremos el comando pip para instalar los requerimientos. Para instalarlo:
   
   <code>$ sudo yum install python-pip</code>
 
-También necesitaremos un entorno virtual <code>$ pip install virtualenv</code>
+También necesitaremos un entorno virtual <code>$ pip install virtualenv</code>. A este lo creamos en el mismo nivel de directorios que las carpeta 'doc/' y 'src/'.
+
+En la misma carpeta que lo creamos corremos nuestro entorno virtual <code>$ source venv/bin/activate</code>
 
 Una vez clonado el repositorio creamos el entorno virtual <code>$ virtualenv venv</code>.
 
