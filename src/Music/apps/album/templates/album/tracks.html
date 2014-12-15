@@ -1,0 +1,25 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      {% for track in tracks %}
+        <div class="col-md-6">
+          <h2>{{ track.title|title }}</h2>
+          <hr>
+          <p><strong>Album:</strong> {{ track.album }}</p>
+          <p><strong>Interprete: </strong> {{ track.interprete }}</p>
+          <p><strong>Numero de pista: </strong> {{ track.number }}</p>
+
+          <p><strong>Duraci&oacute;n: </strong> {{ track.duration }}</p>
+          <p><strong>Compositores: </strong>
+            {% for composer in track.composers.select_related %}
+              {{ composer }}
+            {% endfor %}
+          </p>
+          <p><strong>Lyric: </strong> {{ track.lyric }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

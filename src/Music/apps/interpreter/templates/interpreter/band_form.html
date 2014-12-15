@@ -1,0 +1,26 @@
+{% extends 'base2.html' %}
+
+{% load bootstrap3 %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2 class="text-center">A&ntilde;adir una nueva Banda:</h1>
+        <hr>
+      </div>
+      <div class="col-md-6 col-md-offset-3">
+        <form method='post' action='.' class="form">
+          {% csrf_token %}
+          {% bootstrap_form band_form %}
+          {% bootstrap_form_errors band_form %}
+          {% buttons %}
+              <button type="submit" class="btn btn-primary pull-right">
+                  {% bootstrap_icon "star" %} Enviar
+              </button>
+          {% endbuttons %}
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

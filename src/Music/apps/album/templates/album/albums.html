@@ -1,0 +1,26 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      {% for album in albums %}
+        <div class="col-md-6">
+          <h2>{{ album.title|title }}</h2>
+          <hr>
+          <p><img class="img-responsive" src="{{ album.image_url|default:"" }}" alt=""></p>
+          <p><strong>Album n&uacute;mero:</strong> {{ album.number }}</p>
+          <p><strong>Banda: </strong> {{ album.band }}</p>
+          <p><strong>G&eacute;nero: </strong> {{ album.genre }}</p>
+          <p><strong>N&uacute;mero de pistas: </strong> {{ album.tracks_numbers }}</p>
+          <p><strong>Fecha de Publicaci&oacute;n: </strong> {{ album.date }}</p>
+          <p><strong>Comentarios: </strong>{{ album.comment }}</p>
+          <p><strong>Canciones: </strong></p>
+          {% for track in album.tracks.select_related %}
+            <p>{{ forloop.counter }}. {{ track.title }}</p>
+          {% endfor %}
+          <p><a href="{% url 'album:show_tracks' album.id %}" class="btn btn-success">Ver Canciones</a></p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

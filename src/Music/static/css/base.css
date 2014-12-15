@@ -1,0 +1,16 @@
+body {
+    padding-top: 50px;
+}
+
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+footer {
+  position: relative;
+  margin-top: 90px;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,52 @@
+{% extends 'base2.html' %}
+
+{% block links %}
+  {% load staticfiles %}
+  <link href="{% static 'core/home.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Bienvenido A Nuestra Página!</h1>
+        <p class="lead">
+          Aquí usted podrá organizar toda su carrera musical y obtener información de bandas conocidas
+          en el ambito local, sus últimos discos, sus recientes cambios de integrantes y mucho más!
+          Puedes compartir toda la información respecto de tu banda y compartirla con
+          los demás usuario!
+        </p>
+      </div>
+      <a href="{% url 'interpreter:show_bands' %}">
+        <div class="col-md-6 btn btn-success boxes">
+          <h2 class="text-button">Bandas</h2>
+        </div>
+      </a>
+      <a href="{% url 'album:show_albums' %}">
+        <div class="col-md-6 btn btn-success boxes">
+          <h2 class="text-button">Albumes</h2>
+        </div>
+      </a>
+      <a href="{% url 'interpreter:add_band' %}">
+        <div class="col-md-6 btn btn-primary boxes">
+          <h2 class="text-button">Agregar Banda</h2>
+        </div>
+      </a>
+      <a href="{% url 'album:add_album' %}">
+        <div class="col-md-6 btn btn-primary boxes">
+          <h2 class="text-button">Agregar Album</h2>
+        </div>
+      </a>
+      <a href="{% url 'interpreter:add_artist' %}">
+        <div class="col-md-6 btn btn-primary boxes">
+          <h2 class="text-button">Agregar Integrante</h2>
+        </div>
+      </a>
+      <a href="{% url 'album:add_track' %}">
+        <div class="col-md-6 btn btn-primary boxes">
+          <h2 class="text-button">Agregar Canci&oacute;n</h2>
+        </div>
+      </a>
+    </div>
+  </div>
+{% endblock %}
