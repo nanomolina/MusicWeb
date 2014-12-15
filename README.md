@@ -22,7 +22,9 @@ Necesitaremos el comando pip para instalar los requerimientos. Para instalarlo:
   <code>$ sudo yum install python-pip</code>
 
 También necesitaremos un entorno virtual <code>$ pip install virtualenv</code>
+
 Una vez clonado el repositorio creamos el entorno virtual <code>$ virtualenv venv</code>.
+
 Vamos a la carpeta doc/. Dentro de ella encontraremos un archivo 'requirement.txt' y ejecutamos el comando <code>$ pip install -r requeriments.txt </code>.
 
 Con esto ya deberiamos tener instaladas nuestros requerimientos.
